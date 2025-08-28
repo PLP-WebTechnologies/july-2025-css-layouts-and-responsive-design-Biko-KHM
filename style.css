@@ -1,0 +1,110 @@
+/* ========== Global Styles ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+/* ========== Header ========== */
+.header {
+  background: #f97316;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ========== Navbar (Flexbox) ========== */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;              /* Flexbox for horizontal nav */
+  justify-content: center;
+  background: #333;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: #f97316;
+}
+
+/* ========== Main Layout (Grid) ========== */
+.container {
+  display: grid;               /* Using CSS Grid */
+  grid-template-columns: 3fr 1fr; /* Content + Sidebar */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Content Area */
+.content {
+  background: #fff9f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #fef3e6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ========== Cards (Flexbox) ========== */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;             /* Makes cards wrap on smaller screens */
+  margin-top: 20px;
+}
+
+.card {
+  flex: 1 1 200px;             /* Grow/shrink with min width */
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ========== Footer ========== */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
+
+/* ========== Responsive Design (Media Queries) ========== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 2fr 1fr; /* Adjust ratio */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr; /* Stack content + sidebar */
+  }
+  .navbar ul {
+    flex-direction: column; /* Stack nav links */
+  }
+}
